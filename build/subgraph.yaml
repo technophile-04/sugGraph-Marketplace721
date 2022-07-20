@@ -1,12 +1,12 @@
 specVersion: 0.0.4
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: ethereum
     name: NFTMarketplace
     network: rinkeby
     source:
-      address: '0x5a70aF5342F4828E683d6DF21fb9B1b0660618D0'
+      address: "0x5a70aF5342F4828E683d6DF21fb9B1b0660618D0"
       abi: NFTMarketplace
       startBlock: 11058474
     mapping:
@@ -19,7 +19,7 @@ dataSources:
         - ItemListed
       abis:
         - name: NFTMarketplace
-          file: ./abis/NFTMarketplace.json
+          file: NFTMarketplace/abis/NFTMarketplace.json
       eventHandlers:
         - event: ItemBought(indexed address,indexed address,indexed uint256,uint256)
           handler: handleItemBought
@@ -27,4 +27,4 @@ dataSources:
           handler: handleItemCanceled
         - event: ItemListed(indexed address,indexed address,indexed uint256,uint256)
           handler: handleItemListed
-      file: ./src/nft-marketplace.ts
+      file: NFTMarketplace/NFTMarketplace.wasm
